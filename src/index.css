@@ -1,0 +1,15 @@
+.column-types {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.column-types-item {
+  padding: 20px;
+  display: flex;
+  background: gray;
+  margin: 5px;
+}
+.column-type-name {
+  padding-left: 50px;
+}
