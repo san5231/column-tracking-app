@@ -1,42 +1,45 @@
-import React, { Component } from 'react';
-import ColumnTypes from './ColumnTypes'
-import SECColumn from './SECColumn'
-
+import React, { Component } from "react";
+import ColumnTypes from "./ColumnTypes";
+import SECColumn from "./SECColumn";
+import { Route } from "react-router-dom";
 
 class App extends Component {
-
   state = {
     columns: [
       {
-        'id': 'sec',
-        'name': 'Size Exclusion'
+        id: "sec",
+        name: "Size Exclusion"
       },
       {
-        'id':'cex',
-        'name': 'Cation Exchange',
+        id: "cex",
+        name: "Cation Exchange"
       },
       {
-        'id': 'aex',
-        'name': 'Anion Exchange'
+        id: "aex",
+        name: "Anion Exchange"
       },
       {
-        'id': 'hic',
-        'name': 'Hydrophobic Interaction'
+        id: "hic",
+        name: "Hydrophobic Interaction"
       },
       {
-        'id': 'glycan',
-        'name': 'HILIC (Glycan)'
+        id: "glycan",
+        name: "HILIC (Glycan)"
       },
       {
-        'id': 'rp',
-        'name': 'Reversed Phase'
+        id: "rp",
+        name: "Reversed Phase"
       }
     ]
-  }
+  };
   render() {
     return (
-      //<ColumnTypes columns={this.state.columns}/>
-      <SECColumn/>
+      // <Route
+      //   exact
+      //   path="/"
+      //   render={() => <ColumnTypes columns={this.state.columns} />}
+      // />
+      <SECColumn />
     );
   }
 }
