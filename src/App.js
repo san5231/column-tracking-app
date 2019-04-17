@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import ColumnTypes from './ColumnTypes'
-import SECColumn from './SECColumn'
+import ColumnTypes from './ColumnTypes';
+import SECColumn from './SECColumn';
+import TrackTable from "./TrackTable";
 
 
 class App extends Component {
@@ -36,7 +37,7 @@ class App extends Component {
   render() {
     return (
       //<ColumnTypes columns={this.state.columns}/>
-      <SECColumn/>
+      <TrackTable/>
     );
   }
 }
