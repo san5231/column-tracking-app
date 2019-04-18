@@ -11,8 +11,8 @@ const columns = [
     editor: DateEditor,
     editorParams: { format: "MM/dd/yyyy" }
   },
-  { title: "Backpressure", field: "backpressure" },
-  { title: "Number of Injections", field: "injection" }
+  { title: "Backpressure", field: "backpressure", editor: "input" },
+  { title: "Number of Injections", field: "injection", editor: "input" }
 ];
 const data = [
   { id: 1, date: "04/04/2019", backpressure: 100, injection: 5 },
@@ -21,8 +21,16 @@ const data = [
 ];
 
 class TrackTable extends Component {
+  state = {
+    data: []
+  };
+
+  setData = () => {
+    this.setState({ data });
+  };
+
   render() {
-    return <ReactTabulator columns={columns} data={data} />;
+    return <ReactTabulator columns={columns} data={this.state.data} />;
   }
 }
 
