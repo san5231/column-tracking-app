@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SECColumnList from "./Data/SECColumn.json";
+import { Link } from 'react-router-dom'
 
 class SECColumn extends Component {
   state = {
@@ -11,6 +12,7 @@ class SECColumn extends Component {
       <ul className="sec-list">
         {this.state.SECColumnList.map(column => (
           <li key={column.sn} className="sec-column-list">
+            <Link to="/table">
             <div className="sec-column-name" >
               {column.name}
               <div className='column-details'>
@@ -20,8 +22,9 @@ class SECColumn extends Component {
                 <p>Diameter: {column.diameter}</p>
                 <p>Length: {column.length}</p>
               </div>
-
             </div>
+            </Link>
+
           </li>
         ))}
       </ul>
