@@ -11,7 +11,7 @@ class SECColumn extends Component {
       <ul className="sec-list">
         {this.state.SECColumnList.map(column => (
           <li key={column.sn} className="sec-column-list">
-            <div className="sec-column-name">
+            <div className="sec-column-name" >
               {column.name}
               <div className='column-details'>
                 <p>Alias: {column.alias}</p>

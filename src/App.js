@@ -38,13 +38,20 @@ class App extends Component {
     return (
 
       //<ColumnTypes columns={this.state.columns}/>
-      <TrackTable/>
-      // <Route
-      //   exact
-      //   path="/"
-      //   render={() => <ColumnTypes columns={this.state.columns} />}
-      // />
-      // <SECColumn />
+      <div>
+        <div>
+          <Route
+            exact
+            path="/"
+            render={() => <ColumnTypes columns={this.state.columns} />}
+          />
+        </div>
+          <Route path="/sec" render={() => <SECColumn/>} />
+          <Route path="/table" render={() => <TrackTable/>} />
+
+
+      </div>
+
 
     );
   }
