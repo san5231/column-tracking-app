@@ -14,23 +14,32 @@ const columns = [
   { title: "Backpressure", field: "backpressure", editor: "input" },
   { title: "Number of Injections", field: "injection", editor: "input" }
 ];
-const data = [
-  { id: 1, date: "04/04/2019", backpressure: 100, injection: 5 },
-  { id: 2, date: "04/04/2019", backpressure: 101, injection: 10 },
-  { id: 3, date: "04/04/2019", backpressure: 105, injection: 22 }
-];
+
 
 class TrackTable extends Component {
   state = {
     data: []
   };
 
-  setData = () => {
-    this.setState({ data });
-  };
+  addRow = (d) => {
+    this.setState((state) => ({
+      d: state.data.push({})
+    }))
+    //console.log(this.state.data)
+  }
+
 
   render() {
-    return <ReactTabulator columns={columns} data={this.state.data} />;
+    return (
+      <div>
+        <div>
+          <button onClick={this.addRow}>Add Row</button>
+        </div>
+        <ReactTabulator columns={columns} data={this.state.data} />
+      </div>
+
+
+    )
   }
 }
 
