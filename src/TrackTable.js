@@ -11,8 +11,8 @@ const columns = [
     editor: DateEditor,
     editorParams: { format: "MM/dd/yyyy" }
   },
-  { title: "Backpressure", field: "backpressure", editor: "input" },
-  { title: "Number of Injections", field: "injection", editor: "input" }
+  { title: "Backpressure", field: "backpressure", editor: "input", bottomCalc: "max" },
+  { title: "Number of Injections", field: "injection", editor: "input", bottomCalc:"sum" }
 ];
 
 
@@ -32,10 +32,12 @@ class TrackTable extends Component {
   render() {
     return (
       <div>
-        <div>
+        <div className="contol-buttons">
           <button onClick={this.addRow}>Add Row</button>
         </div>
-        <ReactTabulator columns={columns} data={this.state.data} />
+        <div className="table">
+          <ReactTabulator columns={columns} data={this.state.data} />
+        </div>
       </div>
 
 
